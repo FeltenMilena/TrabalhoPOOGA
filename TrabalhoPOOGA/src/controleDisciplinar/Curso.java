@@ -2,7 +2,7 @@ package controleDisciplinar;
 
 public class Curso {
 	
-	private int codigoCurso;
+    private int codigoCurso;
     private String nome;
     private String coordenador;
     private String tipo;
