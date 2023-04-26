@@ -1,5 +1,4 @@
 package controleDisciplinar;
-import java.util.List;
 
 public class Aluno {
     
