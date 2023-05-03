@@ -1,39 +1,19 @@
 package controleDisciplinar;
 
 public class Aluno {
-    
-    private int matricula;
-    private int cpf;
+	//#region [Váriaveis]
     private String nome;
-    private String dataNasc;
+    private int numSemestres;
+    //#endregion
     
-    public Aluno() {
-    	
+    //#region [Construtor]
+    public Aluno(String nome, int numSemestres) {
+        this.nome = nome;
+        this.numSemestres = numSemestres;
     }
-
-    public Aluno(int matricula, int cpf, String nome, String dataNasc) {
-        this.matricula = matricula;
-        this.cpf = cpf;
-    	this.nome = nome;
-    	this.dataNasc = dataNasc;
-    }
+    //#endregion
     
-    public int getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(int matricula) {
-		this.matricula = matricula;
-	}
-
-	public int getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(int cpf) {
-		this.cpf = cpf;
-	}
-
+    //#region [Métodos Getters e Setters]
 	public String getNome() {
 		return nome;
 	}
@@ -42,12 +22,14 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public String getDataNasc() {
-		return dataNasc;
+	public int getNumSemestres() {
+		return numSemestres;
 	}
 
-	public void setDataNasc(String dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setDisciplinasCursadas(int numSemestres) {
+		this.numSemestres = numSemestres;
 	}
+	//#endregion
 }
+
 

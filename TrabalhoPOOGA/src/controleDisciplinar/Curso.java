@@ -2,72 +2,64 @@ package controleDisciplinar;
 
 public class Curso {
 	
-    private int codigoCurso;
-    private String nome;
-    private String coordenador;
-    private String tipo;
-    private int duracaoTotal;
-    private int creditosTotal;
+	//#region [Váriaveis]
+	private String nomeCurso;
+    private static Disciplina[] disciplinas = {
+        new Disciplina(60963, "Raciocínio Lógico", 1, 60),
+        new Disciplina(60964, "Algoritimos e Programação: Fundamentos", 1, 120),
+        new Disciplina(60965, "Computação: Conceitos e Tendências da Profissão", 1, 60),
+        new Disciplina(60803, "Fundamentos de Álgebra Linear", 1, 60),
+        new Disciplina(30850, "Pensamento Computacional", 2, 60)
+    };
+    private static Disciplina[] disciplinasCursadas = {
+            disciplinas[0],
+            disciplinas[2],
+            disciplinas[4]
+    };
+    private static Disciplina[] disciplinasFaltantes = {
+            disciplinas[1],
+            disciplinas[3],
+    };
+    //#endregion
     
-    public Curso() {
-    	
+    //#region [Construtor]
+    public Curso(String nomeCurso) {
+    	this.nomeCurso = nomeCurso;
+    }
+    //#endregion
+    
+    //#region [Métodos Getters e Setters]
+	public void setNomeCurso(String nomeCurso) {
+		this.nomeCurso = nomeCurso;
+	}
+    
+    public String getNomeCurso() {
+		return nomeCurso;
+	}
+
+	public static void setDisciplinas(Disciplina[] disciplinas) {
+		Curso.disciplinas = disciplinas;
+	}
+    
+	public static Disciplina[] getDisciplinas() {
+        return disciplinas;
+    }
+	
+	public static void setDisciplinasCursadas(Disciplina[] disciplinasCursadas) {
+		Curso.disciplinasCursadas = disciplinasCursadas;
+	}
+	
+    public static Disciplina[] getDisciplinasCursadas() {
+        return disciplinasCursadas;
     }
     
-	public Curso(int codigoCurso, String nome, String coordenador, String tipo, int duracaoTotal, int creditosTotal) {
-		this.codigoCurso = codigoCurso;
-		this.nome = nome;
-		this.coordenador = coordenador;
-		this.tipo = tipo;
-		this.duracaoTotal = duracaoTotal;
-		this.creditosTotal = creditosTotal;
+	public static void setDisciplinasFaltantes(Disciplina[] disciplinasFaltantes) {
+		Curso.disciplinasFaltantes = disciplinasFaltantes;
 	}
-
-	public int getCodigoCurso() {
-		return codigoCurso;
-	}
-
-	public void setCodigoCurso(int codigoCurso) {
-		this.codigoCurso = codigoCurso;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCoordenador() {
-		return coordenador;
-	}
-
-	public void setCoordenador(String coordenador) {
-		this.coordenador = coordenador;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public int getDuracaoTotal() {
-		return duracaoTotal;
-	}
-
-	public void setDuracaoTotal(int duracaoTotal) {
-		this.duracaoTotal = duracaoTotal;
-	}
-
-	public int getCreditosTotal() {
-		return creditosTotal;
-	}
-
-	public void setCreditosTotal(int creditosTotal) {
-		this.creditosTotal = creditosTotal;
-	}
-    
+	
+    public static Disciplina[] getDisciplinasFaltantes() {
+        return disciplinasFaltantes;
+    }
+    //#endregion
 }
+
